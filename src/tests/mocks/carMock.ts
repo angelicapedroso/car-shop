@@ -18,3 +18,22 @@ export const carMockWithId: ICar & { _id: string } = {
   seatsQty: 5,
   doorsQty: 4,
 };
+
+export const allCarsMock: ICar[] = [
+  {
+    model: 'Range Rover Evoque',
+    year: 2022,
+    color: 'white',
+    buyValue: 300000,
+    seatsQty: 5,
+    doorsQty: 4,
+  },
+  {
+    model: 'uno',
+    year: 1994,
+    color: 'green',
+    buyValue: 500000,
+    seatsQty: 5,
+    doorsQty: 2,
+  },
+];

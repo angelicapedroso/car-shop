@@ -10,16 +10,24 @@ describe('Car Model', () => {
 
   before(async () => {
     sinon.stub(Model, 'create').resolves(mock.carMockWithId);
+    sinon.stub(Model, 'find').resolves(mock.allCarsMock);
   });
 
   after(()=>{
     sinon.restore();
   })
 
-  describe('Creating a car', () => {
+  describe('Create car', () => {
     it('successfully created', async () => {
       const newCar = await carModel.create(mock.carMock);
       expect(newCar).to.be.deep.equal(mock.carMockWithId);
+    })
+  })
+
+  describe('list cars', () => {
+    it('successfully listed', async () => {
+      const cars = await carModel.read();
+      expect(cars).to.be.deep.equal(mock.allCarsMock);
     })
   })
 
