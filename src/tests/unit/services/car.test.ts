@@ -12,6 +12,7 @@ describe('Car Service', () => {
 
   before(async () => {
     sinon.stub(carModel, 'create').resolves(mock.carMockWithId);
+    sinon.stub(carModel, 'read').resolves(mock.allCarsMock);
   });
 
   after(()=>{
@@ -30,6 +31,13 @@ describe('Car Service', () => {
       } catch (error) {
         expect(error).to.be.instanceOf(ZodError);
       }
+    })
+  })
+
+  describe('list cars', () => {
+    it('success', async () => {
+      const cars = await carService.read();
+      expect(cars).to.be.deep.equal(mock.allCarsMock);
     })
   })
 
