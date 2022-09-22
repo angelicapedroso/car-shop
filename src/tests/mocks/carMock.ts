@@ -6,7 +6,7 @@ export const carMock: ICar = {
   color: 'white',
   buyValue: 300000,
   seatsQty: 5,
-  doorsQty: 5,
+  doorsQty: 4,
 };
 
 export const carMockWithId: ICar & { _id: string } = {
@@ -16,5 +16,5 @@ export const carMockWithId: ICar & { _id: string } = {
   color: 'white',
   buyValue: 300000,
   seatsQty: 5,
-  doorsQty: 5,
+  doorsQty: 4,
 };
